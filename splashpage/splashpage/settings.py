@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4newkh#9e9tojof%bu-a&kjs@^_kee$6d=hmvt=vqg2kmwwfm5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['172.31.45.68', '54.81.218.151' ] #remove whichever is not needed
+ALLOWED_HOSTS = ['sportsweepstakes.com','172.31.45.68', '54.81.218.151' ] #remove whichever is not needed
 
 
 # Application definition
