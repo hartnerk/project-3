@@ -21,14 +21,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4newkh#9e9tojof%bu-a&kjs@^_kee$6d=hmvt=vqg2kmwwfm5'
+try:
+    SECRET_KEY = os.environ["SECRET_KEY"]
+except KeyError as e:
+    raise RuntimeError("Could not find a SECRET_KEY in environment") from e
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sportsweepstakes.com','172.31.45.68', '54.81.218.151' ] #remove whichever is not needed
+ALLOWED_HOSTS = ['127.0.0.1','sportsweepstakes.com','172.31.45.68', '54.81.218.151' ] #remove whichever is not needed
 
 
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -82,6 +93,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation

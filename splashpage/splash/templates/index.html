@@ -29,6 +29,24 @@
   <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
 
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "oen3bl1kj8");
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WR8455H3MX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WR8455H3MX');
+  </script>
+
 
 </head>
 
@@ -37,7 +55,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="" style="text-decoration:none" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="img/logo.png" alt=""> -->
         <h1 class="sitename">Sports Sweepstakes</h1>
@@ -109,7 +127,7 @@
               <h3> Tier 1 </h3>
               <p class="description">50 entries into every early, grand prize draw including exclusive drawings</p>
               <h4><sup>$</sup>19.99<span> / month</span></h4>
-              <a href="#" class="cta-btn">Purchase Now</a>
+              <a href="{% url 'signup' %}" class="cta-btn">Purchase Now</a>
               <ul>
                 <li><i class="bi bi-check"></i> <span>Cancel at any time</span></li>
                 <li><i class="bi bi-check"></i> <span>50 entries into every early and grand prize draw</span></li>
@@ -123,7 +141,7 @@
               <h3>Premium Plan</h3>
               <p class="description">200 entries into every early, grand prize draw including exclusive drawings</p>
               <h4><sup>$</sup>45<span> / month</span></h4>
-              <a href="#" class="cta-btn">Purchase Now</a>
+              <a href="{% url 'signup' %}" class="cta-btn">Purchase Now</a>
               <ul>
                 <li><i class="bi bi-check"></i> <span>Cancel at any time</span></li>
                 <li><i class="bi bi-check"></i> <span>500 entries into every early and grand prize draw</span></li>
@@ -189,7 +207,7 @@
             <div>
               <h4 class="title">Sign Up for an Account</h4>
               <p class="description">Create your profile to gain access to exclusive sweepstakes.</p>
-              <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
           <!-- End Service Item -->
@@ -199,7 +217,7 @@
             <div>
               <h4 class="title">Choose Your Sweepstakes</h4>
               <p class="description">Browse available sweepstakes offering premium prizes like Premier League tickets, VIP suites, and more.</p>
-              <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -208,7 +226,7 @@
             <div>
               <h4 class="title">Purchase Entries</h4>
               <p class="description">Buy entries to increase your chances of winning the ultimate sports experience.</p>
-              <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -217,7 +235,7 @@
             <div>
               <h4 class="title">Monthly Drawings</h4>
               <p class="description">Each month, winners are randomly selected for a variety of incredible sports prizes.</p>
-              <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -226,7 +244,7 @@
             <div>
               <h4 class="title">Flexible Prize Packages</h4>
               <p class="description">Customize your prize to fit your schedule and preferences, ensuring an unforgettable experience.</p>
-              <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -235,7 +253,7 @@
             <div>
               <h4 class="title">Claim Your Prize</h4>
               <p class="description">Winners are notified and guided through a simple process to claim and enjoy their experience.</p>
-              <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -341,10 +359,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/app-1.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Football 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>Tottenham Football Game</h4>
+                  <p>Luxury suite with all-inclusive hospitality.</p>
                   <a href="{% static 'img/portfolio/app-1.jpg' %}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -353,10 +371,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/product-1.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>Kansas City Chiefs Game</h4>
+                  <p>Private suite and exclusive pre-game experience.</p>
                   <a href="{% static 'img/portfolio/product-1.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -365,10 +383,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/branding-1.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>Women’s PGA Championship</h4>
+                  <p>Exclusive access to players and hospitality.</p>
                   <a href="{% static 'img/portfolio/branding-1.jpg' %}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -377,10 +395,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/books-1.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Books 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>The Preakness</h4>
+                  <p>VIP lounge and trackside dining access.</p>
                   <a href="{% static 'img/portfolio/books-1.jpg' %}" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -389,10 +407,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/app-2.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>Manchester City Game</h4>
+                  <p>VIP lounge access with field views.</p>
                   <a href="{% static 'img/portfolio/app-2.jpg' %}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -401,10 +419,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/product-2.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>Dallas Cowboys Game</h4>
+                  <p>Luxury box with field-level access.</p>
                   <a href="{% static 'img/portfolio/product-2.jpg' %}" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -413,10 +431,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/branding-2.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>The Masters</h4>
+                  <p>VIP clubhouse with exclusive course access.</p>
                   <a href="{% static 'img/portfolio/branding-2.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -425,10 +443,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/books-2.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Books 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>Kentucky Derby</h4>
+                  <p>VIP box and private paddock tours.</p>
                   <a href="{% static 'img/portfolio/books-2.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -437,10 +455,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/app-3.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>Arsenal Game</h4>
+                  <p>Premium seats and gourmet dining included.</p>
                   <a href="{% static 'img/portfolio/app-3.jpg' %}" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -449,10 +467,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/product-3.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>Patriots Game</h4>
+                  <p>VIP suite with premium food options.</p>
                   <a href="{% static 'img/portfolio/product-3.jpg' %}" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -461,10 +479,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/branding-3.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>US Open Golf</h4>
+                  <p>Private hospitality and close-up player views.</p>
                   <a href="{% static 'img/portfolio/product-3.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -473,10 +491,10 @@
               <div class="portfolio-content h-100">
                 <img src="{% static 'img/portfolio/books-3.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <h4>Ascot Horse Race</h4>
+                  <p>Royal Enclosure and fine dining experience.</p>
                   <a href="{% static 'img/portfolio/product-3.jpg' %}" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -536,23 +554,24 @@
           </div>
         </div>
 
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+        <form action="/signup/" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+        {% csrf_token %}
+
           <div class="row gy-4">
 
             <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+              <!-- <input type="text" name="name" class="form-control" placeholder="Your Name" required=""> -->
+              {{ prospectform.name }}
             </div>
 
             <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+              <!-- <input type="email" class="form-control" name="email" placeholder="Your Email" required=""> -->
+              {{ prospectform.email }}
             </div>
 
             <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-            </div>
-
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+              <!-- <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea> -->
+              {{ prospectform.message }}
             </div>
 
             <div class="col-md-12 text-center">
@@ -560,12 +579,12 @@
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
 
-              <button type="submit">Send Message</button>
+              <button type="submit" value="OK">Send Message</button>
             </div>
 
           </div>
         </form><!-- End Contact Form -->
-
+        <!-- add_book.html -->
       </div>
 
     </section><!-- /Contact Section -->
