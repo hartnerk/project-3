@@ -7,8 +7,8 @@ from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect, csrf_
 
 
 def index(request):
-  prospectform = ProspectForm(request.GET)
-  return render(request, 'index.html', {'prospectform': prospectform})
+  template = loader.get_template('index.html')
+  return HttpResponse(template.render())
 
 def service(request):
   template = loader.get_template('service-details.html')
