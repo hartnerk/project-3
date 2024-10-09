@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Prospect
-from .forms import ProspectForm
+from .forms import ProspectForm, QuickProspectForm
 from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect, csrf_exempt
 
 def service(request):
@@ -14,8 +14,21 @@ def prizes(request):
   return HttpResponse(template.render())
 
 def index(request):
-  template = loader.get_template('index.html')
-  return HttpResponse(template.render())
+  if request.method == 'GET':
+    quickform = QuickProspectForm(request.GET)
+    return render(request, 'index.html', {'quickform': quickform})
+  elif request.method == 'POST':
+    quickform = QuickProspectForm(request.POST)
+    if quickform.is_valid():
+      quickform = Prospect(
+          name = 'Quick Entry',
+          email = quickform.cleaned_data['email'],  
+          message = '',
+      )
+      quickform.save()
+      return redirect('index')
+    else:
+      return redirect('index') #there should be some feedback to users that their form wasnt good
 
 def signup(request):
   if request.method == 'GET':

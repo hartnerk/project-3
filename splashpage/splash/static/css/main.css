@@ -674,6 +674,35 @@ section,
 .hero .container {
   position: relative;
   z-index: 3;
+  margin-right: auto;
+  margin-left: 5%;
+}
+
+.hero .signup {
+  font-family: var(--heading-font);
+  position: relative;
+  width: 50%;
+  left: -5%;
+  bottom: -250px;
+  z-index: 3;
+}
+
+.hero .cta-btn {
+  margin-left: auto;
+  margin-right: 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 9%);
+  border: 1px solid black;
+  color: var(--default-color);
+  display: block;
+  text-align: center;
+  padding: 8px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--heading-font);
+  transition: 0.3s;
+  margin-top: 20px;
+  margin-bottom: 6px;
 }
 
 .hero h2 {
@@ -1455,9 +1484,3 @@ section,
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}

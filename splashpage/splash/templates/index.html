@@ -64,11 +64,10 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#pricing">Sign Up</a></li>
+          <li><a href="#pricing">Prices</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">How it Works</a></li>
           <li><a href="#portfolio">Prizes</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#services">How it Works</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -85,19 +84,25 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Unforgettable sports experiences<br></h2>
-        <p>Win <span class="typed" data-typed-items="Private Boxes, Courtside Seats, VIP Suites, Club Passes,  Exclusive Access ">Freelancer</span></p>
+        <p> <span class="typed" data-typed-items="Launching Soon!, , Win Private Boxes, , Coming Soon!, , Win Courtside Seats, , Launching Soon!, , Win VIP Suites, Launching Soon!, , Win Club Passes, , Win Exclusive Access, , ">Freelancer</span></p>
         <div class="social-links">
           <a href="#"><i class="bi bi-twitter-x"></i></a>
           <a href="#"><i class="bi bi-facebook"></i></a>
           <a href="#"><i class="bi bi-instagram"></i></a>
-          <div class="pricing pricing-item featured">
-              <a href="{% url 'signup' %}" class="cta-btn">Purchase Now</a>
-          </div>
         </div>
       </div>
-
-
-    </section><!-- /Hero Section -->
+      <div class="signup" data-aos="fade-up" data-aos-delay="100">
+        <p>Join the beta Draw!</p>
+        <form method="POST">
+        {% csrf_token %}
+          <div>
+            {{ quickform.email }}
+          </div>
+          <input class='cta-btn' type="submit" value="Sign Up">
+        </form>
+      </div>
+    </section>
+    <!-- /Hero Section -->
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing section">
@@ -105,37 +110,38 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Subscription Pricing</h2>
-        <p>Subscribe to enter every upcoming sports sweepstake Draw, and increase your chances from 1 to 50, 100, 200 or 500! </p>
+        <p>Subscribe to enter every upcoming sports sweepstake Draw, and increase your chances from 1 to 10, 20 or 50! </p>
       </div><!-- End Section Title -->
 
       <div class="container">
 
         <div class="row gy-4">
-
-        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Mail in Plan</h3>
-              <p class="description">Please see full mail in aplication instructions</p>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <p class="text-center small">No credit card required</p>
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item featured">
+              <h3> Top Up </h3>
+              <p class="description">100 points which can be used towards, weekly entries, grand prize draws and exclusive prizes</p>
+              <h4><sup>$</sup>10.00<span> / month</span></h4>
+              <a href="{% url 'signup' %}" class="cta-btn">Purchase Now</a>
               <ul>
-                <li><i class="bi bi-check"></i> <span>1 entry into prize draw</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Online sign up and entry</span></li>
+                <li><i class="bi bi-check"></i> <span>100 points to use towards prizes</span></li>
+                <li><i class="bi bi-check"></i> <span>Equivalent to 10 entries into prize draws</span></li>
+                <li><i class="bi bi-check"></i> <span>Online sign up and entry</span></li>
+              </ul>
             </div>
-          </div> 
-          <!-- End Pricing Item --> 
+          </div><!-- End Pricing Item -->
 
           <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
             <div class="pricing-item featured">
               <p class="popular">Popular</p>
               <h3> Tier 1 </h3>
-              <p class="description">50 entries into every early, grand prize draw including exclusive drawings</p>
-              <h4><sup>$</sup>19.99<span> / month</span></h4>
+              <p class="description">20 entries into every early, grand prize draw including exclusive drawings</p>
+              <h4><sup>$</sup>20.00<span> / month</span></h4>
               <a href="{% url 'signup' %}" class="cta-btn">Purchase Now</a>
               <ul>
                 <li><i class="bi bi-check"></i> <span>Cancel at any time</span></li>
                 <li><i class="bi bi-check"></i> <span>50 entries into every early and grand prize draw</span></li>
                 <li><i class="bi bi-check"></i> <span>Online sign up and entry</span></li>
+                <li><i class="bi bi-check"></i> <span>Full membership benefits</span></li>
               </ul>
             </div>
           </div><!-- End Pricing Item -->
@@ -143,7 +149,7 @@
           <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
             <div class="pricing-item">
               <h3>Premium Plan</h3>
-              <p class="description">200 entries into every early, grand prize draw including exclusive drawings</p>
+              <p class="description">50 entries into every early, grand prize draw including exclusive drawings</p>
               <h4><sup>$</sup>45<span> / month</span></h4>
               <a href="{% url 'signup' %}" class="cta-btn">Purchase Now</a>
               <ul>
@@ -152,15 +158,25 @@
 
                 <li><i class="bi bi-check"></i> <span>Exclusive Draw: entry into monthly aditional cash prize</span></li>
                 <li><i class="bi bi-check"></i> <span>Online sign up and entry</span></li>
+                <li><i class="bi bi-check"></i> <span>Full membership benefits</span></li>
               </ul>
             </div>
           </div><!-- End Pricing Item -->
+
+          <div data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Mail in Plan</h3>
+              <p class="description">No purchase necessary. Please see full mail in aplication instructions in the <a href="{% url 'service' %}">terms and conditions</a>.</p>
+            </div>
+          </div> 
+          <!-- End Pricing Item --> 
 
         </div>
 
       </div>
 
-    </section><!-- /Pricing Section -->
+    </section>
+    <!-- /Pricing Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -178,7 +194,7 @@
             <img src="{% static 'img/profile-img.jpg' %}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-7 content">
-            <h3>We are a sports experience-based entertainment company focused on providing once-in-a-lifetime sports adventures. Through monthly draws and flexible prize options, we add excitement and fun to the planning and coordination of the ultimate experiences for passionate sports fans.</h3>
+            <h3>We are a sports experience-based entertainment company focused on providing once-in-a-lifetime sports adventures. Through weekly draws and flexible prize options, we add excitement and fun to the planning and coordination of the ultimate experiences for passionate sports fans.</h3>
             <p>
               Our goal is to offer everyone the chance to enjoy once-in-a-lifetime sports experiences, such as the Super Bowl, premier league games, and horse races. We aim to make the process stress-free and flexible, ensuring that planning your dream sports adventure is as exciting as the event itself.
             </p>
@@ -191,7 +207,221 @@
 
       </div>
 
-    </section><!-- /About Section -->
+    </section>
+    <!-- /About Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Upcoming Prize Drawings</h2>
+        <p>There are hundereds of prizes and experinces planned for the upcoming year</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-football">Football</li>
+            <li data-filter=".filter-golf">Golf</li>
+            <li data-filter=".filter-racing">Racing</li>
+            <li data-filter=".filter-f1">F1</li>
+            <li data-filter=".filter-nfl">NFL</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-football">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/app-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Tottenham Football Game</h4>
+                  <p>Luxury suite with all-inclusive hospitality.</p>
+                  <a href="{% static 'img/portfolio/app-1.jpg' %}" title="Luxury suite with all-inclusive hospitality." data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-f1">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/F1-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Silverstone</h4>
+                  <p>Private hospitality and close-up racing views.</p>
+                  <a href="{% static 'img/portfolio/F1-2.jpg' %}" title="Private hospitality and close-up racing views." data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-golf">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/branding-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Women’s PGA Championship</h4>
+                  <p>Exclusive access to players and hospitality.</p>
+                  <a href="{% static 'img/portfolio/branding-1.jpg' %}" title="Exclusive access to players and hospitality." data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-racing">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/books-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>The Preakness</h4>
+                  <p>VIP lounge and trackside dining access.</p>
+                  <a href="{% static 'img/portfolio/books-1.jpg' %}" title="VIP lounge and trackside dining access." data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-football">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/app-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Manchester City Game</h4>
+                  <p>VIP lounge access with field views.</p>
+                  <a href="{% static 'img/portfolio/app-2.jpg' %}" title="VIP lounge access with field views." data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nfl">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/product-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Dallas Cowboys Game</h4>
+                  <p>Luxury box with field-level access.</p>
+                  <a href="{% static 'img/portfolio/product-2.jpg' %}" title="Luxury box with field-level access." data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-golf">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/branding-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>The Masters</h4>
+                  <p>VIP clubhouse with exclusive course access.</p>
+                  <a href="{% static 'img/portfolio/branding-2.jpg' %}" title="VIP clubhouse with exclusive course access." data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-racing">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/books-2.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Kentucky Derby</h4>
+                  <p>VIP box and private paddock tours.</p>
+                  <a href="{% static 'img/portfolio/books-2.jpg' %}" title="VIP box and private paddock tours." data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-football">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/app-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Arsenal Game</h4>
+                  <p>Premium seats and gourmet dining included.</p>
+                  <a href="{% static 'img/portfolio/app-3.jpg' %}" title="Premium seats and gourmet dining included." data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nfl">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/product-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Patriots Game</h4>
+                  <p>VIP suite with premium food options.</p>
+                  <a href="{% static 'img/portfolio/product-3.jpg' %}" title="VIP suite with premium food options." data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-golf">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/branding-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>US Open Golf</h4>
+                  <p>Private hospitality and close-up player views.</p>
+                  <a href="{% static 'img/portfolio/product-3.jpg' %}" title="Private hospitality and close-up player views." data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-racing">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/books-3.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Ascot Horse Race</h4>
+                  <p>Royal Enclosure and fine dining experience.</p>
+                  <a href="{% static 'img/portfolio/books-3.jpg' %}" title="Royal Enclosure and fine dining experience." data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-f1">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/F1-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Monaco Grand Prix</h4>
+                  <p>VIP yatch viewing with premium food options.</p>
+                  <a href="{% static 'img/portfolio/F1-1.jpg' %}" title="VIP yatch viewing with premium food options." data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nfl">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/product-1.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Kansas City Chiefs Game</h4>
+                  <p>Private suite and exclusive pre-game experience.</p>
+                  <a href="{% static 'img/portfolio/product-1.jpg' %}" title="Private suite and exclusive pre-game experience." data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-football">
+              <div class="portfolio-content h-100">
+                <img src="{% static 'img/portfolio/app-4.jpg' %}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Game of the week</h4>
+                  <p>Game of the week experience.</p>
+                  <a href="{% static 'img/portfolio/app-4.jpg' %}" title="Game of the week experience." data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /Portfolio Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
@@ -216,38 +446,11 @@
           </div>
           <!-- End Service Item -->
 
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-            <div>
-              <h4 class="title">Choose Your Sweepstakes</h4>
-              <p class="description">Browse available sweepstakes offering premium prizes like Premier League tickets, VIP suites, and more.</p>
-              <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-            <div>
-              <h4 class="title">Purchase Entries</h4>
-              <p class="description">Buy entries to increase your chances of winning the ultimate sports experience.</p>
-              <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
             <div>
-              <h4 class="title">Monthly Drawings</h4>
-              <p class="description">Each month, winners are randomly selected for a variety of incredible sports prizes.</p>
-              <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
-            <div>
-              <h4 class="title">Flexible Prize Packages</h4>
-              <p class="description">Customize your prize to fit your schedule and preferences, ensuring an unforgettable experience.</p>
+              <h4 class="title">Choose Your Sweepstakes</h4>
+              <p class="description">Make every week a sweepstakes prize draw, winners have access to a variety of incredible sports prizes.</p>
               <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -256,7 +459,7 @@
             <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
             <div>
               <h4 class="title">Claim Your Prize</h4>
-              <p class="description">Winners are notified and guided through a simple process to claim and enjoy their experience.</p>
+              <p class="description">Customize your prize to fit your schedule and preferences, ensuring an unforgettable experience.</p>
               <a href="{% url 'service' %}" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -265,16 +468,16 @@
 
       </div>
 
-    </section><!-- /Services Section -->
+    </section>
+    <!-- /Services Section -->
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section
     <section id="testimonials" class="testimonials section light-background">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>What our winners say</h2>
         <p>Hear from our winners to see why the love Sports Sweepstakes!</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -310,7 +513,7 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -326,7 +529,7 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
           </div>
           <div class="swiper-pagination"></div>
@@ -334,240 +537,15 @@
 
       </div>
 
-    </section><!-- /Testimonials Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Past and Upcoming Prize Drawings</h2>
-        <p>There are hundereds of prizes and experinces planned for the upcoming year</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">Football</li>
-            <li data-filter=".filter-product">NFL</li>
-            <li data-filter=".filter-branding">Golf</li>
-            <li data-filter=".filter-books">Ponies</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/app-1.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Tottenham Football Game</h4>
-                  <p>Luxury suite with all-inclusive hospitality.</p>
-                  <a href="{% static 'img/portfolio/app-1.jpg' %}" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/product-1.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Kansas City Chiefs Game</h4>
-                  <p>Private suite and exclusive pre-game experience.</p>
-                  <a href="{% static 'img/portfolio/product-1.jpg' %}" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/branding-1.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Women’s PGA Championship</h4>
-                  <p>Exclusive access to players and hospitality.</p>
-                  <a href="{% static 'img/portfolio/branding-1.jpg' %}" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/books-1.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>The Preakness</h4>
-                  <p>VIP lounge and trackside dining access.</p>
-                  <a href="{% static 'img/portfolio/books-1.jpg' %}" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/app-2.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Manchester City Game</h4>
-                  <p>VIP lounge access with field views.</p>
-                  <a href="{% static 'img/portfolio/app-2.jpg' %}" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/product-2.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Dallas Cowboys Game</h4>
-                  <p>Luxury box with field-level access.</p>
-                  <a href="{% static 'img/portfolio/product-2.jpg' %}" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/branding-2.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>The Masters</h4>
-                  <p>VIP clubhouse with exclusive course access.</p>
-                  <a href="{% static 'img/portfolio/branding-2.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/books-2.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Kentucky Derby</h4>
-                  <p>VIP box and private paddock tours.</p>
-                  <a href="{% static 'img/portfolio/books-2.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/app-3.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Arsenal Game</h4>
-                  <p>Premium seats and gourmet dining included.</p>
-                  <a href="{% static 'img/portfolio/app-3.jpg' %}" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/product-3.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Patriots Game</h4>
-                  <p>VIP suite with premium food options.</p>
-                  <a href="{% static 'img/portfolio/product-3.jpg' %}" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/branding-3.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>US Open Golf</h4>
-                  <p>Private hospitality and close-up player views.</p>
-                  <a href="{% static 'img/portfolio/product-3.jpg' %}" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="{% static 'img/portfolio/books-3.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Ascot Horse Race</h4>
-                  <p>Royal Enclosure and fine dining experience.</p>
-                  <a href="{% static 'img/portfolio/product-3.jpg' %}" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="{% url 'prizes' %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>This is a site built for sports fans by sports fans, if there are any questions please reach out and we would be more then happy to assist in answering</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
-          <div class="row gy-5">
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call<br></h3>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email</h3>
-                  <p>info@example.com</p>
-                </div>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-        </div>
-        <!-- add_book.html -->
-      </div>
-
-    </section><!-- /Contact Section -->
+    </section>
+    /Testimonials Section -->
 
   </main>
 
   <footer id="footer" class="footer light-background">
     <div class="container">
       <h3 class="sitename">Sport Sweepstakes</h3>
-      <p>Our online contest to win sport experinces includes a method of entry via post. In addition to getting the opportunity to win the main prize, entrants will also be entered into other prize draws to win additional prizes regardless of the method of entry. No purchase is necessary to enter.</p>
+      <p>Our online contest to win sport experinces includes a method of entry via post. In addition to getting the opportunity to win the main prize, entrants will also be entered into other prize draws to win additional prizes regardless of the method of entry. No purchase is necessary to enter see <a href="{% url 'service' %}">terms and conditions</a> for full details.</p>
       <div class="social-links d-flex justify-content-center">
         <a href=""><i class="bi bi-twitter-x"></i></a>
         <a href=""><i class="bi bi-facebook"></i></a>
