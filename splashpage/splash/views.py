@@ -13,6 +13,10 @@ def prizes(request):
   template = loader.get_template('portfolio-details.html')
   return HttpResponse(template.render())
 
+def contact(request):
+  template = loader.get_template('contact.html')
+  return HttpResponse(template.render())
+
 def index(request):
   if request.method == 'GET':
     quickform = QuickProspectForm(request.GET)

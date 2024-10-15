@@ -756,6 +756,25 @@ section,
   padding: 0;
 }
 
+.about .homebutton{
+  margin-left: auto;
+  margin-right: 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 9%);
+  border: 1px solid black;
+  color: white;
+  display: block;
+  text-align: center;
+  padding: 8px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--heading-font);
+  transition: 0.3s;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+
 .about .profile-img img {
   margin-top: -60px;
   margin-left: 40px;
@@ -1206,6 +1225,25 @@ section,
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
   margin-bottom: 30px;
+}
+
+.contact .homebutton{
+  margin-left: auto;
+  margin-right: 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 9%);
+  border: 1px solid black;
+  color: white;
+  display: block;
+  text-align: center;
+  padding: 8px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--heading-font);
+  transition: 0.3s;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  text-decoration: none;
 }
 
 .contact .info-item i {
